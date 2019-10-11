@@ -1,9 +1,8 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_plus/data/data_const.dart';
 import 'package:flutter_movie_plus/data/movie.dart';
 import 'package:flutter_movie_plus/utils/styles.dart';
+import 'package:flutter_movie_plus/widgets/animated_bottom_app_bar.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -57,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
                       controller: _pageController,
                       itemCount: 3,
                       itemBuilder: (BuildContext context, int index) =>
-                         MovieCard(movie: recentMovies[0]),
+                          MovieCard(movie: recentMovies[0]),
                     ),
                   ),
                 ],
@@ -66,10 +65,8 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        color: Colors.amber,
-        height: 50.0,
-        width: double.infinity,
+      bottomNavigationBar: AnimatedBottomAppBar(
+        barItems: bottomAppBarItems,
       ),
     );
   }
